@@ -12,55 +12,6 @@ body{
     box-sizing: border-box;
 }
 
-/* Start  Media Quary */
-
-/* Start Mobil  */
-@media (max-width: 767px) and (max-width: 766px){
-
-    .Navbar .nav{
-        position: relative  !important;
-    }
-}
-/* End  Mobil  */
-
-/* Start Small  */
-@media (min-width: 768px) and (max-width:991px){
-    .container{
-        width: 750px;
-    }
-        .Navbar .nav{
-        position: relative  !important;
-    }
-    .Navbar .nav ul {
-        position: relative ;
-        top:0;
-        right: 320px !important;
-    }
-
-    .Featured .Feat span{
-        padding-right: 10px;
-    }
-}
-/*  End Small  */
-
- /* Start  md  */
-@media (min-width: 992px) and (max-width:1199px){
-    .container{
-        width: 970px;
-    }
-
-}
- /*  End md  */
-
- /* Start  Lg  */
-@media (min-width: 1200px){ 
-    .container{
-        width: 1170px;
-    }
-}
-/*  End Lg  */
-
-/* End Media Quary */
 
 /* Start My Framework */
 .container{
@@ -83,6 +34,27 @@ body{
 .visible-md,
 .visible-lg{
     display: none;
+}
+.Hidden{
+    display: block;
+}
+
+.img{
+    width: 100%;
+}
+.float-left{
+    float: left;
+    
+}
+
+.float-right{
+      float: right;
+      
+}
+.right{
+    position: relative;
+    left: 600px
+   
 }
 /* End My Framework */
 div.image{
@@ -154,12 +126,7 @@ div.image{
 }
 .Navbar .nav a:hover{color:rgb(207, 203, 203)}
 
-.Navbar .nav #right{
-    position: relative;
-    left: 620px
-   
 
-}
 
 .Navbar .nav .Sign{
     background-color: #e61f5b;
@@ -196,18 +163,43 @@ div.image{
     width: 100%;
     
 }
-/* Start Media Quary */
-@media (min-width: 992px) and (max-width:1199px){
 
-    .Navbar .nav ul{
-        position: fixed ;
-        top:0;
-        right: 650px !important;
+/* icon Navbar   */
+.Navbar .icon{
+    position: absolute;
+    top: 1.2rem;
+    right: .75rem;
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 21px;
+}
+.Navbar .icon .bar{
+    width: 100%;
+    height: 3px;
+    background-color: white;
+    border-radius: 10px;
+    
+}  
+
+@media (max-width: 768px){
+    .Navbar .icon {
+        display: flex;
+        
     }
+
 }
 
 
-/* End Media Quary */
+@media (min-width: 768px) and  (max-width:991px){
+    .Navbar .icon {
+        display: flex;
+        right: 0 !important;
+    }
+}
+/* icon Navbar   */
+
 
 /* End Navbar*/
 /*  Start Silde*/
@@ -288,8 +280,8 @@ div.image{
 .Featured .Feat footer span{  
   padding-left: 170px;
   margin-top: 75px;
-  float: right;
   color:#e61f5b;
+  position: relative;
 }
 .Featured .Feat:hover{
     border:2px solid #e61f5b;
@@ -312,15 +304,16 @@ div.image{
 }
 .Featured input:hover{opacity: .7;}
 
-/* Start Media Quary */
 
 /* Mobile */
-@media (max-width: 768px){
+
+
+@media (max-width: 767px){
     .Featured{
         height: 100% !important;
         padding-left: 25px;
         padding-right: 15px;
-        text-align: center;
+        text-align: center !important;
     }
     .Featured .Feat , .Featured #submit{
         display: block ;
@@ -331,29 +324,52 @@ div.image{
     }   
     .Featured .Feat span{
         position: absolute !important;
-        left: 45%  !important;
+        left: 43%  !important;
     }
 }
 /* End Mobile */
 
+
+
 /* Small */
 
-@media (min-width: 768px) and ( max-width: 991px ){
+@media (min-width: 768px) and (max-width: 991px) {
+    .Featured{
+        height: 100% !important;
+        padding-left: 25px;
+        padding-right: 15px;
+        text-align: center !important;
+    }
+    .Featured .Feat , .Featured #submit{
+        display: block ;
+        width: 100% !important;
+        height: 100% !important;
+        margin:40px auto !important;
+        float: left;
+    }   
+    
     .Featured{
         height: 100% !important;
  
     }
+  
 
-    .Featured .Feat{
-        width: 45.8% !important;
-        float: left !important;
+    .Featured .Feat:first-of-type{
+        width: 100%;
+        height: 100%;
+        
     }   
-    .Featured .Feat #sumbit{
-        float: left !important;
-        margin: 0 auto !important; 
-        text-align: center !important;
-    }
+    .Featured .Feat:not(:first-of-type){
+        width: 45%;
+        padding: 0;
+        
+    }   
 
+    .Featured .Feat footer span {
+        position: absolute !important;
+        left: 65%;
+    }   
+   
 
 }  
 
@@ -376,7 +392,6 @@ div.image{
 
 /* End Md */
 
-/* End Media Quary */
 /*End Featured*/
 
 
@@ -412,3 +427,68 @@ div.image{
 
 
 /*End Footer*/
+
+
+/* Start  Media Quary */
+
+
+@media (max-width: 768px){   /*  Mobile  */
+    .Navbar .nav{
+        position: relative;
+    }
+    .Navbar .nav ul {
+        display: none;
+    }
+    .Hidden{
+        display: none;
+    }
+}
+
+
+
+@media (min-width: 768px) and (max-width:991px){   /*  Small */
+    .container{
+        width: 750px;
+    }
+    .Navbar .nav{
+        position: relative;
+    }
+        .Navbar .nav ul {
+        display: none;
+    }
+    .Hidden{
+        display: none;
+    }
+}
+
+
+
+@media (min-width: 992px) and (max-width:1199px){ /*   Md  */
+    .container{
+        width: 970px;
+    }
+    .visible-md{
+        display: none;
+    }
+    .Hidden{
+        display: none;
+    }
+
+}
+
+
+
+@media (min-width: 1200px){  /*   Lg  */
+    .container{
+        width: 1170px;
+    }
+ .visible-lg{
+     display: none;
+ }
+.Hidden{
+    display: none;
+}
+}
+
+
+/* End Media Quary */
